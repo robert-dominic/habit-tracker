@@ -11,7 +11,7 @@ export function toggleHabitCompletion(habit: Habit, date: string): Habit {
          updatedCompletions = completions.filter(d => d !== date);
     } else {
         // add date
-         updatedCompletions = [...completions, date];
+         updatedCompletions = [...new Set([...completions, date])];
     }
     
     return { ...habit, completions: updatedCompletions };
