@@ -2,7 +2,7 @@
 
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/navigation'
-import { LogOut, Plus } from 'lucide-react'
+import { LogOut, Plus, Book, Flame, Calendar } from 'lucide-react'
 
 import HabitForm from '@/components/habits/HabitForm'
 import HabitList from '@/components/habits/HabitList'
@@ -183,11 +183,15 @@ export default function DashboardPage() {
         <header className="border-b border-border bg-surface px-4 py-4 sm:px-8">
           <div className="mx-auto flex w-full max-w-6xl items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="flex h-10 w-10 items-center justify-center bg-primary text-white font-bold leading-none">
-                {session?.email?.slice(0, 1).toUpperCase() ?? 'H'}
-              </div>
+              <button
+                type="button"
+                className="cursor-pointer flex h-11 w-11 overflow-hidden rounded-lg items-center justify-center bg-surface border border-border p-1"
+                onClick={() => window.location.reload()}
+              >
+                <img src="/icons/icon-192.png" alt="App Icon" className="h-full w-full object-contain" />
+              </button>
               <div>
-                <h1 className="text-[12px] sm:text-sm font-bold text-foreground">
+                <h1 className="text-sm font-bold text-foreground">
                   {session?.email ?? 'User'}
                 </h1>
                 <span className="text-xs text-muted">Habit Tracker</span>
@@ -217,20 +221,29 @@ export default function DashboardPage() {
             </div>
 
             <div className="grid gap-4 sm:grid-cols-3">
-              <div className="border border-border bg-surface px-6 py-8">
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary">Total habits</p>
+              <div className="border border-border bg-surface px-6 py-8 rounded-md">
+                <div className="flex items-center gap-2">
+                  <Book className="w-4 h-4 text-primary" />
+                  <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary">Total habits</p>
+                </div>
                 <div className="mt-4 flex items-baseline gap-2">
                   <p className="text-3xl sm:text-4xl font-bold text-foreground">{userHabits.length}</p>
                 </div>
               </div>
-              <div className="border border-border bg-surface px-6 py-8">
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary">Completed today</p>
+              <div className="border border-border bg-surface px-6 py-8 rounded-md">
+                <div className="flex items-center gap-2">
+                  <Flame className="w-4 h-4 text-orange-500 fill-orange-500/80" />
+                  <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary">Completed today</p>
+                </div>
                 <div className="mt-4 flex items-baseline gap-2">
                   <p className="text-3xl sm:text-4xl font-bold text-foreground">{completedTodayCount}</p>
                 </div>
               </div>
-              <div className="border border-border bg-surface px-6 py-8 text-right">
-                <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary">Today is</p>
+              <div className="border border-border bg-surface px-6 py-8 text-right rounded-md">
+                <div className="flex items-center justify-end gap-2">
+                  <Calendar className="w-4 h-4 text-primary" />
+                  <p className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-primary">Today is</p>
+                </div>
                 <div className="mt-4">
                   <p className="text-lg sm:text-xl font-bold text-foreground">
                     {new Intl.DateTimeFormat('en-US', { weekday: 'long' }).format(new Date())}
@@ -292,7 +305,7 @@ export default function DashboardPage() {
           </section>
         </div>
 
-        <div className="fixed bottom-6 inset-x-0 z-20 flex w-full justify-center sm:hidden transition-transform duration-300">
+        <div className="fixed bottom-6 right-6 z-20 flex w-full justify-end sm:hidden transition-transform duration-300">
           <button
             type="button"
             onClick={handleCreateHabitClick}
