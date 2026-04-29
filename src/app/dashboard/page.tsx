@@ -191,10 +191,7 @@ export default function DashboardPage() {
                 <img src="/icons/icon-192.png" alt="App Icon" className="h-full w-full object-contain" />
               </button>
               <div>
-                <h1 className="text-sm font-bold text-foreground">
-                  {session?.email ?? 'User'}
-                </h1>
-                <span className="text-xs text-muted">Habit Tracker</span>
+                <h1 className="text-sm md:text-base font-bold text-foreground">Habit Tracker</h1>
               </div>
             </div>
             <button

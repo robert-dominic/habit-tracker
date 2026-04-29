@@ -6,7 +6,7 @@ import { useRouter } from 'next/navigation'
 import SplashScreen from '@/components/shared/SplashScreen'
 import { getCurrentSession } from '@/lib/auth'
 
-const SPLASH_DELAY_MS = 1250
+const SPLASH_DELAY_MS = 1100
 
 export default function HomePage() {
   const router = useRouter()
