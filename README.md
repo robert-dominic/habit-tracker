@@ -6,8 +6,8 @@ A mobile-first Progressive Web App for tracking daily habits. Built as part of H
 
 ## Deliverable Links
 
-- **Live Application**: (https://habit-tracker.pxxl.click/)
-- **Video Walkthrough**: (https://drive.google.com/file/d/1dmh7KkiaFRfuUM42oBcWnFd3Fp9_sAhz/view?usp=drive_link)
+- **Live Application**: [https://habit-tracker.pxxl.click/](https://habit-tracker.pxxl.click/)
+- **Video Walkthrough**: [Google Drive Link](https://drive.google.com/file/d/1dmh7KkiaFRfuUM42oBcWnFd3Fp9_sAhz/view?usp=drive_link)
 
 ---
 
